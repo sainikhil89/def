@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcat-pod
+  labels:
+    type: appsserver
+spec:
+  containers:
+    - name: mytommy
+      image: tomee
+  tolerations:
+     - key: slave2
+       value: closed
+       effect: NoSchedule
+       operator: Equal
+...
